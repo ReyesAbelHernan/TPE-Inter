@@ -1,0 +1,220 @@
+h1{
+  position: absolute;
+  font-style: oblique;
+  font-size: 30px;
+  left: 50%;
+  top: 0%;
+  color:blue;
+  background-color: white;
+}
+body {
+  background:white;
+}
+.vida1 ,.vida2, .vida3 {
+  display: inline-block;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 50px;
+  height: 45px;
+  /* margin: 15% auto; */
+  background: url('../spritesheets/corazon.png') left top;
+  
+  
+}
+
+.dinosaurioCorrer {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translate(-300px,0%);
+  width: 200px;
+  height: 174px;
+  background: url('../spritesheets/Correr2.png') left top;
+  animation: play .8s steps(8) infinite;
+}
+
+
+@keyframes play {
+  100% { background-position: -2000px; }
+}
+
+.dinosaurioMuerto {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(0%, -60%);
+  width: 240px;
+  height: 174px;
+  margin: 15% auto;
+  background: url('../spritesheets/Muerto1.png') left top;
+  animation: muerto .8s steps(8);    
+  animation-fill-mode: forwards; 
+  
+  
+}
+
+
+@keyframes muerto {
+  0% { background-position-x: 0px; }
+  100% { background-position: -2000px; }
+} 
+.dinosaurioSaltar{
+  position: absolute;
+  top: 18%;
+  left: 40%;
+  transform: translate(-150%, -50%);
+  width: 200px;
+  height: 174px;
+  background: url('../spritesheets/Saltar2.png') left top;
+  animation: saltar .8s steps(10) infinite;
+}
+@keyframes saltar {
+  100% { background-position: -2504px; }
+} 
+
+.dinosaurioColisionado{
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(-85%, -60%);
+  width: 330px;
+  height: 209px;
+  margin: 15% auto;
+  background: url('../spritesheets/Colisionado1.png') left top;
+  animation: colision .8s steps(2) infinite;
+}
+@keyframes colision {
+  
+  100% { background-position: -600px; }
+} 
+
+
+.fondo1{
+  position: absolute;
+  overflow: hidden;
+  align-content: center;
+  top: 15%;
+  width: 1024px;
+  height: 462px;
+  background: url('../spritesheets/Fondo/fondo2.png') left top repeat-x;
+  animation: fondo 2s infinite linear;
+} 
+@keyframes fondo {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -1024px; }
+} 
+
+#roca{
+  position: absolute;
+  top: 42%;
+  left: 1200px;
+  width: 150px;
+  height: 100px;
+  background-size: cover;
+  background: url('../spritesheets/roca2.png') left top;
+}
+#puntaje{
+  font-style: oblique;
+  font-size: 30px;
+  position: relative;
+  top: 7%;
+  left: 75%;
+  color: yellow;
+  
+}
+
+:root {
+  --animation: glitch; /* glitch, hue, fade, shrink */
+  --speed: 2s;
+  --easing: linear;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+html, body {
+  display: flex;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  left: 40%;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  overflow: hidden;
+}
+
+#gameover  {
+  position: relative;
+  left: 5%;
+  visibility: hidden;
+  padding: 1em;
+  font-family: "Press Start 2P", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2f99ff;
+  text-shadow: 0px 2px #255fcc;
+  animation: var(--animation) var(--speed) infinite var(--easing);
+}
+
+h2 { font-size: 3em }
+
+@keyframes glitch {
+  0%, 12%, 15%, 52%, 55%, 82%, 85%, 100% { opacity: 1; transform: scaleX(1) scaleY(1) }  
+  13% { opacity: .8; transform: scaleY(2); color: #0ff }
+  53% { opacity: .8; transform: scaleX(.7);  color: #f0f }
+  83% { opacity: .8; transform: rotate(-10deg); color: #ff0 }
+}
+
+@keyframes hue {  
+  13% { color: #0ff }
+  53% { color: #f0f }
+  83% { color: #ff0 }
+}
+
+@keyframes shrink {  
+  0% { transform: scaleY(1) }
+  50% { transform: scaleY(.5) }
+  100% { transform: scaleY(1) }
+}
+
+@keyframes fade {  
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+#inicio{
+  position: absolute;
+  top: 0%;
+  left: 20%;
+  visibility: visible;
+  width: 60%;
+  height: 150px;
+  z-index: 1000;
+  margin-top: 100px;
+  margin-left: auto;
+  font-style: oblique;
+  font-size: 20px;
+  transform: translate(20px,0);
+  margin-top: 80px;
+  color: yellow;
+  
+}
+#comenzar{
+  position: relative;
+  left: 60%;
+  visibility: visible;
+  font-size: 20px;
+  transform: translate(80px,0);
+  background-color: black;  
+  background-color: grey;
+}
+
+#volverajugar{
+  position: relative;
+  left: 10%;
+  top: 15%;
+  font-size: 20px;
+  background-color: grey;
+} 
